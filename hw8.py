@@ -64,32 +64,32 @@ print(random_string(10, 50))
 # Знаки препинания всегда идут в конце слова.
 
 
-def modify_text(text):
+def modify_text(rnd_str):
     i = 0
-    text = list(text)
-    while i + 10 < len(text):
+    rnd_str = list(rnd_str)
+    while i + 10 < len(rnd_str):
         numb =" " + str(randint(1, 50)) + " "
         symb = [", ", " ", "\n",numb ]
         space = randint(1, 10)
         i += space
-        text[i] = choice(symb)
-    text.append(".")
-    text = "".join(text)
-    text = text.title()
-    return text
+        rnd_str[i] = choice(symb)
+    rnd_str.append(".")
+    rnd_str = "".join(rnd_str)
+    rnd_str = rnd_str.title()
+    return rnd_str
 
 
 
-def lowercase(text):
+def lowercase(rnd_str):
     i = 0
-    text = list(text)
-    while i + 3 < len(text):
+    rnd_str = list(rnd_str)
+    while i + 3 < len(rnd_str):
         uppercase = randint(1,3)
         i += uppercase
-        text[i] = text[i].lower()
-    return "".join(text)
+        rnd_str[i] = rnd_str[i].lower()
+    return "".join(rnd_str)
 
 
-print(lowercase(modify_text(random_string(150,400))))
-print(lowercase('AAAAAAAAA'))
+print(lowercase(modify_text(random_string(150,200))))
+
 
